@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pertanyaan untuk Nanda Cantika 💖</title>
+<style>
+  body {
+    background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  h1 {
+    margin-top: 70px;
+    color: white;
+    font-size: 2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  }
+
+  button {
+    font-size: 1.2rem;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    margin: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  #yesBtn {
+    background-color: #ff4081;
+    color: white;
+  }
+
+  #noBtn {
+    background-color: #fff;
+    color: #ff4081;
+    position: absolute;
+  }
+
+  #message {
+    margin-top: 30px;
+    font-size: 1.3rem;
+    color: white;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  #nandaImg {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 20px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.7);
+    display: none;
+  }
+
+  .heart {
+    position: fixed;
+    color: #ffdde1;
+    font-size: 20px;
+    animation: floatUp 4s linear infinite;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+  <h1>Nanda Cantika, kamu sayang aku nggak? 💕</h1>
+  <button id="yesBtn">Sayang 😘</button>
+  <button id="noBtn">Tidak 😝</button>
+
+  <div id="message"></div>
+  <img id="nandaImg" src="nanda.jpg" alt="Foto Nanda Cantika">
+
+<script>
+  const noBtn = document.getElementById('noBtn');
+  const yesBtn = document.getElementById('yesBtn');
+  const message = document.getElementById('message');
+  const nandaImg = document.getElementById('nandaImg');
+
+  noBtn.addEventListener('mouseover', () => {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+  });
+
+  yesBtn.addEventListener('click', () => {
+    message.innerHTML = `
+      <p>💖 Awww~ Aku juga sayang banget sama kamu, Nanda Cantika 😍</p>
+      <p>Kamu itu bintang di malamku, senyummu selalu jadi alasan aku bahagia 🌙✨</p>
+      <p>Selamat malam cintaku 💕 semoga tidurmu nyenyak dan mimpi indah tentang kita 😘</p>
+    `;
+    message.style.opacity = 1;
+    nandaImg.style.display = 'block';
+    createHearts();
+  });
+
+  function createHearts() {
+    const heartInterval = setInterval(() => {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '💖';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }, 200);
+    setTimeout(() => clearInterval(heartInterval), 5000);
+  }
+</script>
+</body>
+</html>
