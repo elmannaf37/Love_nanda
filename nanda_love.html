@@ -3,120 +3,569 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pertanyaan untuk pacar aku yang paling cantik💖</title>
+<title>Taman Bunga Cinta untuk Nanda 🌹</title>
 <style>
-  body {
-    background: linear-gradient(135deg, #ffb6c1, #ff69b4);
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-    height: 100vh;
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap');
+  
+  * {
     margin: 0;
-    overflow: hidden;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: linear-gradient(to bottom, #1a0033 0%, #2d1b4e 50%, #4a2c5e 100%);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  .moon {
+    position: fixed;
+    top: 50px;
+    right: 80px;
+    width: 100px;
+    height: 100px;
+    background: #fef9e7;
+    border-radius: 50%;
+    box-shadow: 0 0 60px rgba(254, 249, 231, 0.8);
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   h1 {
-    margin-top: 70px;
-    color: white;
-    font-size: 2rem;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    font-family: 'Pacifico', cursive;
+    color: #ffd4e5;
+    font-size: 2.5rem;
+    text-shadow: 0 0 20px rgba(255, 212, 229, 0.8);
+    margin-bottom: 10px;
   }
 
-  button {
-    font-size: 1.2rem;
-    padding: 10px 25px;
+  .subtitle {
+    color: #e8b4d9;
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+
+  .music-control {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .music-btn {
+    background: linear-gradient(135deg, #ff6b9d, #c06c84);
+    color: white;
     border: none;
-    border-radius: 25px;
-    margin: 20px;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(255, 107, 157, 0.4);
+    font-family: 'Poppins', sans-serif;
   }
 
-  #yesBtn {
-    background-color: #ff4081;
+  .music-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.6);
+  }
+
+  .progress-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .progress-text {
+    color: #ffd4e5;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .progress-bar {
+    background: rgba(255, 255, 255, 0.2);
+    height: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .progress-fill {
+    background: linear-gradient(90deg, #ff6b9d, #ffd4e5);
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
     color: white;
+    font-weight: 600;
+    box-shadow: 0 0 20px rgba(255, 107, 157, 0.6);
   }
 
-  #noBtn {
-    background-color: #fff;
-    color: #ff4081;
+  .garden {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .flower-container {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .flower-container:hover {
+    transform: translateY(-5px);
+  }
+
+  .flower {
+    position: relative;
+    width: 100px;
+    height: 120px;
+    margin: 0 auto 15px;
+  }
+
+  .stem {
     position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 60px;
+    background: #4a7c59;
+    border-radius: 2px;
   }
 
-  #message {
-    margin-top: 30px;
-    font-size: 1.3rem;
-    color: white;
+  .bud {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 60px;
+    background: #8b7e74;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.5s ease;
+  }
+
+  .bloom {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 80px;
+    height: 80px;
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
-  #nandaImg {
-    width: 180px;
-    height: 180px;
+  .petal {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50% 50% 0 50%;
+  }
+
+  .petal:nth-child(1) { 
+    top: -10px; 
+    left: 50%; 
+    transform: translateX(-50%) rotate(0deg);
+    background: linear-gradient(135deg, #ff6b9d, #ff8fab);
+  }
+  .petal:nth-child(2) { 
+    top: 10px; 
+    right: 0; 
+    transform: rotate(72deg);
+    background: linear-gradient(135deg, #ff8fab, #ffb3c1);
+  }
+  .petal:nth-child(3) { 
+    bottom: 5px; 
+    right: 8px; 
+    transform: rotate(144deg);
+    background: linear-gradient(135deg, #ffb3c1, #ffc8d4);
+  }
+  .petal:nth-child(4) { 
+    bottom: 5px; 
+    left: 8px; 
+    transform: rotate(216deg);
+    background: linear-gradient(135deg, #ffc8d4, #ffd4e5);
+  }
+  .petal:nth-child(5) { 
+    top: 10px; 
+    left: 0; 
+    transform: rotate(288deg);
+    background: linear-gradient(135deg, #ffd4e5, #ff6b9d);
+  }
+
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle, #ffd700, #ffed4e);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+  }
+
+  .flower-container.bloomed .bud {
+    transform: translateX(-50%) scale(0);
+    opacity: 0;
+  }
+
+  .flower-container.bloomed .bloom {
+    transform: translateX(-50%) scale(1) rotate(360deg);
+    opacity: 1;
+  }
+
+  .reason {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 15px;
+    color: #ffd4e5;
+    font-size: 0.95rem;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.5s ease;
+    line-height: 1.5;
+  }
+
+  .flower-container.bloomed .reason {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .final-message {
+    background: linear-gradient(135deg, rgba(255, 107, 157, 0.2), rgba(192, 108, 132, 0.2));
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 40px;
+    text-align: center;
+    border: 2px solid rgba(255, 212, 229, 0.3);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 1s ease;
+    margin-top: 40px;
+    box-shadow: 0 10px 40px rgba(255, 107, 157, 0.3);
+  }
+
+  .final-message.show {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .final-message h2 {
+    font-family: 'Pacifico', cursive;
+    color: #ffd4e5;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(255, 212, 229, 0.6);
+  }
+
+  .final-message p {
+    color: #e8b4d9;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+
+  .couple-photo {
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     object-fit: cover;
-    margin-top: 20px;
-    box-shadow: 0 0 15px rgba(255,255,255,0.7);
-    display: none;
+    margin: 30px auto;
+    display: block;
+    border: 5px solid rgba(255, 212, 229, 0.5);
+    box-shadow: 0 0 40px rgba(255, 107, 157, 0.6);
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+    transition: all 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
-  .heart {
+  .final-message.show .couple-photo {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    transition-delay: 0.5s;
+  }
+
+  .heart-rain {
     position: fixed;
-    color: #ffdde1;
+    pointer-events: none;
     font-size: 20px;
-    animation: floatUp 4s linear infinite;
+    animation: heartFall 4s linear;
+    z-index: 999;
   }
 
-  @keyframes floatUp {
-    0% { transform: translateY(0) scale(1); opacity: 1; }
-    100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+  @keyframes heartFall {
+    0% {
+      transform: translateY(-50px) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  .sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: sparkleAnim 1s ease-out forwards;
+  }
+
+  @keyframes sparkleAnim {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    .garden { grid-template-columns: repeat(auto-fit, minmin(120px, 1fr)); gap: 20px; }
+    .final-message { padding: 30px; }
+    .couple-photo { width: 250px; height: 250px; }
   }
 </style>
 </head>
 <body>
-  <h1>Cantikkuuuu, kamu sayang aku nggak? 💕</h1>
-  <button id="yesBtn">SAYANG 😘</button>
-  <button id="noBtn">NGGAK 😝</button>
+  <div class="stars" id="starsContainer"></div>
+  <div class="moon"></div>
 
-  <div id="message"></div>
-  <img id="ayangImg" src="ayang.jpg" alt="Foto Nanda Cantika">
+  <div class="container">
+    <div class="header">
+      <h1>Taman Bunga Cinta 🌹</h1>
+      <p class="subtitle">Siram setiap bunga untuk melihat alasan kenapa aku sayang banget sama kamu ✨</p>
+    </div>
+
+    <div class="music-control">
+      <button class="music-btn" id="musicBtn">🎵 Putar Musik Romantis</button>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-text">Bunga yang sudah mekar: <span id="bloomCount">0</span>/15</div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill">0%</div>
+      </div>
+    </div>
+
+    <div class="garden" id="garden"></div>
+
+    <div class="final-message" id="finalMessage">
+      <h2>Selamat Malam Cintaku 💕</h2>
+      
+      <!-- FOTO KALIAN BERDUA - Ganti src dengan nama file foto kamu -->
+      <img src="fotokita.jpg" alt="Foto Kita Berdua" class="couple-photo">
+      
+      <p>Itu semua alasan kenapa aku sayang banget sama kamu yang paling cantik sedunia 🌍</p>
+      <p>Kamu adalah bunga tercantik di taman hidupku 🌹</p>
+      <p>Terima kasih sudah menjadi alasan aku tersenyum setiap hari 😊</p>
+      <p>Semoga malam ini kamu tidur nyenyak dan bermimpi indah tentang kita berdua 💖</p>
+      <p style="font-size: 1.5rem; margin-top: 20px;">Aku sayang kamu, Nanda Cantika ❤️</p>
+    </div>
+  </div>
+
+  <!-- MUSIK - Ganti dengan link musik kamu -->
+  <audio id="bgMusic" loop>
+    <source src="musik-romantis.mp3" type="audio/mpeg">
+  </audio>
 
 <script>
-  const noBtn = document.getElementById('noBtn');
-  const yesBtn = document.getElementById('yesBtn');
-  const message = document.getElementById('message');
-  const nandaImg = document.getElementById('nandaImg');
+  const reasons = [
+    "Karena senyummu selalu bisa bikin hariku jadi cerah 😊",
+    "Karena kamu selalu dengerin ceritaku, bahkan yang paling random sekalipun 👂",
+    "Karena kamu cantik banget, apalagi pas lagi senyum gitu 💕",
+    "Karena kamu bikin aku jadi pengen jadi versi terbaik dari diriku 🌟",
+    "Karena pelukan kamu adalah tempat paling nyaman buat aku 🤗",
+    "Karena kamu ngerti aku, bahkan tanpa aku ngomong 💭",
+    "Karena ketawa kamu itu menular dan bikin aku ikutan bahagia 😄",
+    "Karena kamu sabar sama semua kelakuan absurd aku 🙈",
+    "Karena kamu bikin definisi 'rumah' jadi berarti 🏡",
+    "Karena mata kamu selalu jadi tempat favorit aku untuk tersesat 👀",
+    "Karena kamu support mimpi-mimpi aku, sekecil apapun itu ✨",
+    "Karena setiap sama kamu adalah petualangan baru 🎢",
+    "Karena kamu bikin jatuh cinta itu jadi se asik ini 💘",
+    "Karena kehadiran kamu adalah hadiah terbaik dalam hidupku 🎁",
+    "Karena kamu adalah jawaban dari doa-doa aku 🙏"
+  ];
 
-  noBtn.addEventListener('mouseover', () => {
-    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
-    noBtn.style.left = `${x}px`;
-    noBtn.style.top = `${y}px`;
-  });
-
-  yesBtn.addEventListener('click', () => {
-    message.innerHTML = `
-      <p>💖 Awww~ Aku juga sayang banget sama kamu yaaang😍</p>
-      <p>Kamu itu ibarat bintang di malamku, senyummu selalu jadi alasan aku bahagia 🌙✨</p>
-      <p>Selamat malam cintaku 💕 semoga tidurmu nyenyak dan mimpi indah tentang kita 😘</p>
-    `;
-    message.style.opacity = 1;
-    nandaImg.style.display = 'block';
-    createHearts();
-  });
-
-  function createHearts() {
-    const heartInterval = setInterval(() => {
-      const heart = document.createElement('div');
-      heart.classList.add('heart');
-      heart.innerHTML = '💖';
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.fontSize = Math.random() * 20 + 10 + 'px';
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 4000);
-    }, 200);
-    setTimeout(() => clearInterval(heartInterval), 5000);
+  // Create stars
+  const starsContainer = document.getElementById('starsContainer');
+  for (let i = 0; i < 100; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.animationDelay = Math.random() * 3 + 's';
+    starsContainer.appendChild(star);
   }
+
+  // Create garden
+  const garden = document.getElementById('garden');
+  let bloomedCount = 0;
+
+  reasons.forEach((reason, index) => {
+    const flowerContainer = document.createElement('div');
+    flowerContainer.classList.add('flower-container');
+    flowerContainer.innerHTML = `
+      <div class="flower">
+        <div class="stem"></div>
+        <div class="bud">💧</div>
+        <div class="bloom">
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="center"></div>
+        </div>
+      </div>
+      <div class="reason">${reason}</div>
+    `;
+
+    flowerContainer.addEventListener('click', function() {
+      if (!this.classList.contains('bloomed')) {
+        this.classList.add('bloomed');
+        bloomedCount++;
+        updateProgress();
+        createSparkles(this);
+        
+        if (bloomedCount === reasons.length) {
+          setTimeout(showFinalMessage, 1000);
+        }
+      }
+    });
+
+    garden.appendChild(flowerContainer);
+  });
+
+  function updateProgress() {
+    const percentage = (bloomedCount / reasons.length) * 100;
+    document.getElementById('bloomCount').textContent = bloomedCount;
+    document.getElementById('progressFill').style.width = percentage + '%';
+    document.getElementById('progressFill').textContent = Math.round(percentage) + '%';
+  }
+
+  function createSparkles(element) {
+    const rect = element.getBoundingClientRect();
+    for (let i = 0; i < 8; i++) {
+      setTimeout(() => {
+        const sparkle = document.createElement('div');
+        sparkle.classList.add('sparkle');
+        sparkle.style.left = rect.left + rect.width / 2 + (Math.random() - 0.5) * 100 + 'px';
+        sparkle.style.top = rect.top + rect.height / 2 + (Math.random() - 0.5) * 100 + 'px';
+        document.body.appendChild(sparkle);
+        setTimeout(() => sparkle.remove(), 1000);
+      }, i * 50);
+    }
+  }
+
+  function showFinalMessage() {
+    document.getElementById('finalMessage').classList.add('show');
+    createHeartRain();
+  }
+
+  function createHeartRain() {
+    const hearts = ['💖', '💕', '💗', '💓', '💝', '❤️', '🌹'];
+    const interval = setInterval(() => {
+      const heart = document.createElement('div');
+      heart.classList.add('heart-rain');
+      heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }, 200);
+    setTimeout(() => clearInterval(interval), 5000);
+  }
+
+  // Music control
+  const musicBtn = document.getElementById('musicBtn');
+  const bgMusic = document.getElementById('bgMusic');
+  let isPlaying = false;
+
+  musicBtn.addEventListener('click', () => {
+    if (isPlaying) {
+      bgMusic.pause();
+      musicBtn.textContent = '🎵 Putar Musik Romantis';
+      isPlaying = false;
+    } else {
+      bgMusic.play();
+      musicBtn.textContent = '⏸️ Pause Musik';
+      isPlaying = true;
+    }
+  });
 </script>
 </body>
 </html>
